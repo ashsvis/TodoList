@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.ComponentModel;
 
 namespace TodoList.Models
@@ -8,8 +9,10 @@ namespace TodoList.Models
         private bool isDone;
         private string text;
 
+        [JsonProperty(PropertyName = "createDate")]
         public DateTime CreationDate { get; set; } = DateTime.Now;
 
+        [JsonProperty(PropertyName = "isDone")]
         public bool IsDone
         {
             get { return isDone; }
@@ -22,6 +25,7 @@ namespace TodoList.Models
             }
         }
 
+        [JsonProperty(PropertyName = "text")]
         public string Text
         {
             get { return text; }
